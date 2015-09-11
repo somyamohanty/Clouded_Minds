@@ -28,12 +28,14 @@ api = API(auth)
 config={}
 with open('config.txt','r') as configfile:
 	for line in configfile:
+		if line.startswith('#'):
+			continue
 		name,var=line.partition('=')[::2]
 		config[name.strip()]=var.strip()
 
 #end_time=1442082600
 end_time=1441944660
-start_time=int(config['starttime'] if config['starttime'] else time.time())
+start_time=int(config['starttime']) if config['starttime'] else time.time()
 
 end_time=int(config['endtime'])
 keywords=config['keywords'].split(',')
@@ -52,11 +54,10 @@ class TweetListener(StreamListener):
     data['created_at'] = tweet.created_at
     data['geo'] = tweet.geo
     data['lang'] = tweet.lang
- 
+    
+    #Store only 'non-retweeted' tweets.
     if not tweet.retweeted and 'RT @' not in tweet.text: 
     	print data, '\n', tweet.retweeted
-	#socket.send(json.dumps(data))
-    	self.db.Tweets.insert(data)
 	if time.time() > end_time:
 		print 'Time Finished'
 		return False
@@ -69,5 +70,9 @@ class TweetListener(StreamListener):
     print >> sys.stderr, 'Stream timeout'
     return True
 
+#Sleep Till Start Time is reached.
+sleeptime = start_time-time.time() if (start_time-time.time()) > 1 else 0
+time.sleep(sleeptime)
+#Start Streaming
 listen = Stream(auth, TweetListener(api))
 listen.filter(track=keywords)
