@@ -58,6 +58,7 @@ class TweetListener(StreamListener):
     #Store only 'non-retweeted' tweets.
     if not tweet.retweeted and 'RT @' not in tweet.text: 
     	print data, '\n', tweet.retweeted
+	self.db.Tweets.insert(data)
 	if time.time() > end_time:
 		print 'Time Finished'
 		return False
