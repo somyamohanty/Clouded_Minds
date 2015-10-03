@@ -24,9 +24,13 @@ access_token_secret="KZvfQqLijN5rtMd836YsHRJMgqOaJUbF06t7KQpf4rxLa"
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = API(auth)
-
+filename='config.txt'
 config={}
-with open('config.txt','r') as configfile:
+if sys.argv[1]:
+    filename=sys.argv[1]
+else:
+    print 'Running with default config'
+with open(filename,'r') as configfile:
 	for line in configfile:
 		if line.startswith('#'):
 			continue
@@ -45,6 +49,7 @@ class TweetListener(StreamListener):
     self.api = api
     super(tweepy.StreamListener, self).__init__()
     self.db = pymongo.MongoClient()[config['db']]
+    print self.db
 
   def on_status(self, tweet):
     data = {}
@@ -72,8 +77,8 @@ class TweetListener(StreamListener):
     return True
 
 #Sleep Till Start Time is reached.
-sleeptime = start_time-time.time() if (start_time-time.time()) > 1 else 0
-time.sleep(sleeptime)
+#sleeptime = start_time-time.time() if (start_time-time.time()) > 1 else 0
+#time.sleep(sleeptime)
 #Start Streaming
 listen = Stream(auth, TweetListener(api))
 listen.filter(track=keywords)
