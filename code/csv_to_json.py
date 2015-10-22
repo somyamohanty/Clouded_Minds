@@ -8,7 +8,7 @@ infile = open(inname, 'r')
 outfile = open(outname, 'w')
 
 linenum = 0
-outfile.write("{\"data\": [")
+outfile.write("{\"language\": \"auto\", \"data\": [")
 for line in infile:
 	if linenum == 0: #Ignore the column headers
 		linenum += 1
