@@ -18,5 +18,8 @@ for line in infile:
 	text = line.split(',')[0]
 	outfile.write("{\"text\": \""+text+ "\", \"id\": "+str(linenum)+"}")
 	linenum += 1
+
+infile.close()
 outfile.write("]}")
+outfile.close()
 	
