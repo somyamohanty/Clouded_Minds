@@ -9,7 +9,7 @@ lang_avail = False #This field indicates if this CSV has the lang column, curren
 outfile = open(outname, 'w')
 
 linenum = 0
-outfile.write("{\"language\": \"auto\", \"data\": [")
+outfile.write('{"language": "auto", "data": [')
 for line in infile:
 	if linenum == 0: #Ignore the column headers
 		linenum += 1
@@ -22,11 +22,11 @@ for line in infile:
 		if lang.startswith('en') or lang.startswith('es'): #Sentiment140 only supports these two. They can be en-US, etc. so we check the first part
 			if linenum > 1:
 				outfile.write(',') #Writes the closing comma of {"text": "I love Titanic.", "id": 1234}, 
-			outfile.write("{\"text\": \""+text+ "\", \"id\": "+str(linenum)+"}")
+			outfile.write('{"text": '+text.strip('"')+', "id": '+str(linenum)+'}')
 	else:
 		if linenum > 1:
 			outfile.write(',')
-		outfile.write("{\"text\": \""+text+ "\", \"id\": "+str(linenum)+"}")
+		outfile.write('{"text": "'+text.strip('"')+ '", "id": '+str(linenum)+'}')
 	linenum += 1
 
 infile.close()
