@@ -16,17 +16,17 @@ for line in infile:
 		continue
 
 	line_split = line.split(',')
-	text = line_split[0]
+	text = line_split[0].strip('"').rstrip()
 	if lang_avail == True:
 		lang = line_split[5]
 		if lang.startswith('en') or lang.startswith('es'): #Sentiment140 only supports these two. They can be en-US, etc. so we check the first part
 			if linenum > 1:
 				outfile.write(',') #Writes the closing comma of {"text": "I love Titanic.", "id": 1234}, 
-			outfile.write('{"text": '+text.strip('"')+', "id": '+str(linenum)+'}')
+			outfile.write('{"text": "'+ text + '", "id": '+ str(linenum) +'}')
 	else:
 		if linenum > 1:
 			outfile.write(',')
-		outfile.write('{"text": "'+text.strip('"')+ '", "id": '+str(linenum)+'}')
+		outfile.write('{"text": "'+ text +'", "id": '+ str(linenum) +'}')
 	linenum += 1
 
 infile.close()
