@@ -9,6 +9,7 @@ import tweepy
 import json
 import pymongo
 import time
+from datetime import datetime, timedelta
 from tweepy import OAuthHandler, Stream, API
 from tweepy.streaming import StreamListener
 
@@ -38,10 +39,12 @@ with open(filename,'r') as configfile:
 		config[name.strip()]=var.strip()
 
 #end_time=1442082600
-end_time=1441944660
-start_time=int(config['starttime']) if config['starttime'] else time.time()
+epoch = datetime(1970, 1, 1, tzinfo=timezone.utc)
+start_time = int(config['starttime']) if config['starttime'] else (datetime(2015,10,3,17,30,0, tzinfo=timezone.utc) - epoch).total_seconds() #Else requires UTC time instead of the game's time
+end_time = int(config['endtime']) if config['endtime'] else (datetime(2015,10,3,19,30,0, tzinfo=timezone.utc) - epoch).total_seconds()
 
-end_time=int(config['endtime'])
+#start_time=int(config['starttime])
+#end_time=int(config['endtime'])
 keywords=config['keywords'].split(',')
 
 class TweetListener(StreamListener):
