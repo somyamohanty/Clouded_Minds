@@ -17,7 +17,16 @@ for line in infile:
 
 	line_split = line.split(',')
 	text = line_split[0].strip('"').rstrip()
-	text = text.replace("\""," ")
+	text = text.replace('"',' ')
+	text = text.replace('\'',' ')
+	text = text.replace('\\',' ')
+	text = text.replace('\r',' ')
+	text = text.replace('\t',' ')
+	text = text.replace('\n',' ')
+	text = text.replace('\b',' ')
+	text = text.replace('\/',' ')
+	text = text.replace('\f',' ')
+	text = text.replace('\t',' ')
 	if len(text) > 3: #Prevent empty text field ("text": "")
 		if lang_avail == True:
 			lang = line_split[5]
