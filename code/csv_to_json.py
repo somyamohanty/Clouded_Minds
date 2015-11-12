@@ -21,7 +21,7 @@ for line in infile:
 		linenum += 1
 		continue
 
-	if(act_linenum == 1500): #TODO: Get an actual limit from the API
+	if(act_linenum == 5000): #5000 is based on API's recommendation for 60 second timeout window
 		outfile.write("]}")
 		outfile.close()
 		file_num += 1
