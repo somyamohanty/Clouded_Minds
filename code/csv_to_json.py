@@ -36,13 +36,13 @@ for line in infile:
 		if lang_avail == True:
 			lang = line_split[5]
 			if lang.startswith('en') or lang.startswith('es'): #Sentiment140 only supports these two langs
-				if linenum > 1:
+				if linenum > 1  and act_linenum != 0:
 					outfile.write(',') #Writes the closing comma of {"text": "I love Titanic.", "id": 1234}, 
 				
 				outfile.write('{"text": "'+ text + '", "id": '+ __builtins__.str(linenum) +'}')
 				act_linenum += 1
 		else:
-			if linenum > 1:
+			if linenum > 1  and act_linenum != 0:
 				outfile.write(',')
 			outfile.write('{"text": "'+ text +'", "id": '+ __builtins__.str(linenum) +'}')
 			act_linenum += 1
