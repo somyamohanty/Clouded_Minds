@@ -2,7 +2,8 @@
 #Note that it would be better to use the MongoDB directly
 import os, sys
 
-gamenames = {"chears", "livnor", "mcinew", "soumun", "swaeve"}
+#gamenames = {"chears", "livnor", "mcinew", "soumun", "swaeve"} #all game names
+gamenames = {"mcinew"} #lang tagged games
 for gamename in gamenames:
 
     inname = "../data/" + gamename + ".csv"
@@ -11,7 +12,7 @@ for gamename in gamenames:
     file_num = 1
 
     infile = open(inname, 'r')
-    lang_avail = False #This field indicates if this CSV has the lang column, currently manual entry
+    lang_avail = True #This field indicates if this CSV has the lang column, currently manual entry
     if not os.path.exists("../data/json/"+gamename+"/orig/"):
 	os.makedirs("../data/json/"+gamename+"/orig/")
     outfile = open(outname + '_' + str(file_num) + '.json', 'w')
@@ -35,7 +36,7 @@ for gamename in gamenames:
 
         line_split = line.split(',')
         text = line_split[0].strip().translate(None,'"\/\\\r\t\n\b\f\t')
-            
+
         if len(text) > 3: #Prevent empty text field ("text": "")
             if lang_avail == True:
                 lang = line_split[5]
