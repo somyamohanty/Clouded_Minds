@@ -1,5 +1,6 @@
 #Converts the CSV format to the Sentiment140 compatible json
 #Note that it would be better to use the MongoDB directly
+import os, sys
 
 gamenames = {"chears", "livnor", "mcinew", "soumun", "swaeve"}
 for gamename in gamenames:
@@ -11,6 +12,8 @@ for gamename in gamenames:
 
     infile = open(inname, 'r')
     lang_avail = False #This field indicates if this CSV has the lang column, currently manual entry
+    if not os.path.exists("../data/json/"+gamename+"/orig/"):
+	os.makedirs("../data/json/"+gamename+"/orig/")
     outfile = open(outname + '_' + str(file_num) + '.json', 'w')
 
     linenum = 0
