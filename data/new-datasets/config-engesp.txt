@@ -1,0 +1,4 @@
+starttime=1447440700
+endtime=2447440700
+keywords=#engesp,#espeng,engvsesp,espvseng,engvesp,espveng,England,Spain,SPAvENG,SPA,ENG
+db=engesp

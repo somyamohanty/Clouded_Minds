@@ -1,0 +1,4 @@
+starttime=1447440700
+endtime=2447440700
+keywords=#engfra,#fraeng,engvsfra,fravseng,engvfra,fraveng,England,France,FRAvENG,FRA,ENG
+db=engfra
