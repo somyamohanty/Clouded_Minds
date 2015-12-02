@@ -16,7 +16,7 @@ for gamename in gamenames:
 	os.makedirs("../data/json/"+gamename+"/orig/")
     outfile = open(outname + '_' + str(file_num) + '.json', 'w')
 
-    linenum = 0
+    linenum = 2
     act_linenum = 0
 
     outfile.write('{"language": "auto", "data": [')
