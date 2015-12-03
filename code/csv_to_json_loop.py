@@ -1,5 +1,5 @@
-#gamenames = {"chears", "livnor", "mcinew", "soumun", "swaeve"} #all game names
 #converts the CSV format to the Sentiment140 compatible json
+#Note that it would be better to use the MongoDB directly
 import csv, sys, os
 
 gamenames = {"mcinew"} #lang tagged games
@@ -32,19 +32,20 @@ for row in reader:
     cleantext = row['text'].strip().translate(None,'"\/\\\r\t\n\b\f\t')
     clearlang = row['lang'].strip().translate(None,'"\/\\\r\t\n\b\f\t')
     
+    
     if len(cleantext) > 3: #Prevent empty text field ("text": "")
         if lang_avail == True:
-            if clearlang.startswith('en') or clearlang.startswith('es'): #Sentiment140 only supports these two langs
+            if clearlang == 'en' or clearlang =='es': #Sentiment140 only supports these two langs
                 if linenum > 1 and act_linenum != 0:
                     outfile.write(',') #Writes the closing comma of {"text": "I love Titanic.", "id": 1234}, 
                     
                 outfile.write('{"text": "'+ cleantext + '", "id": '+ __builtins__.str(linenum) +'}')
                 act_linenum += 1
-        else:
-            if linenum > 1 and act_linenum != 0:
-                outfile.write(',')
-            outfile.write('{"text": "'+ cleantext +'", "id": '+ __builtins__.str(linenum) +'}')
-            act_linenum += 1
+        #else:
+        #    if linenum > 1 and act_linenum != 0:
+        #        outfile.write(',')
+        #    outfile.write('{"text": "'+ cleantext +'", "id": '+ __builtins__.str(linenum) +'}')
+        #    act_linenum += 1
     
     linenum += 1
 
