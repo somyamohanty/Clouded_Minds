@@ -2,3 +2,4 @@ starttime=13420121200
 endtime=2442027374
 keywords=#chears,Arsenal,Chelsea,#CFC,#AFC
 db=chears
+kotime=2015,9,19,12,45
