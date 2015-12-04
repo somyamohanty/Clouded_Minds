@@ -1,4 +1,8 @@
+game=England vs France, Friendly Game at Wembley Stadium
 starttime=1447440700
 endtime=2447440700
 keywords=#engfra,#fraeng,engvsfra,fravseng,engvfra,fraveng,England,France,FRAvENG,FRA,ENG
 db=engfra
+kotime=2015,11,17,21,2
+fh_added_time=0
+sh_added_time=4

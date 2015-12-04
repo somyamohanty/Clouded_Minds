@@ -1,4 +1,8 @@
+game=Swansea vs Bournemouth, English Premier League
 starttime=1441951020
 endtime=2441951140
 keywords=Swansea,Bournemouth,swabou
 db=swabou
+kotime=2015,11,21,16,00
+fh_added_time=3
+sh_added_time=5

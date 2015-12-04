@@ -1,4 +1,8 @@
+game=Real Madrid vs Barcelona, Spanish La Liga
 starttime=1441951020
 endtime=2441951140
 keywords=fcbrma,rmafcb,fcbvsrma,rmavsfcb,elclassico,barcelona,real madrid,el classico
 db=realbarca
+kotime=2015,11,21,18,15
+fh_added_time=2
+sh_added_time=6
