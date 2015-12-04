@@ -1,10 +1,13 @@
 import requests
 import json
+import os, sys
 
 url = "http://www.sentiment140.com/api/bulkClassifyJson?appid=wcarter312@gmail.com"
 gamenames = {"chears", "livnor", "mcinew", "soumun", "swaeve"}
 for gamename in gamenames:
-    
+    if not os.path.exists("../data/json/"+gamename+"/senti/"):
+	os.makedirs("../data/json/"+gamename+"/senti/")    
+
     fn = 1
     while fn != 0:
         try:
