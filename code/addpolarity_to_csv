@@ -5,7 +5,7 @@ import json
 import os
 
 #Config
-gamename = 'chears'
+gamename = 'mcinew'
 fn = 1
 
 #Open files / load JSON
@@ -18,12 +18,15 @@ rc_id = 2
 jid = 0
 path, dirs, files = os.walk("../data/json/" + gamename + "/senti/").next()
 max_files = len(files)
-max_files = max_files - 2 #Mac creates invisible file and bug in last file
+
+
+#!!!!IMPORTANT!!!!!!! CHECK WHEN RUNNING IN MAC
+#max_files = max_files - 1  #Mac creates invisible file 
 
 
 #Write
 with open("../data/" + gamename + "_sent.csv", 'w') as outfile:
-    fieldnames = ['text', 'user', 'created_at','timestamp', 'geo','polarity']
+    fieldnames = ['text', 'user', 'created_at','timestamp', 'geo', 'lang','polarity']
     writer = csv.DictWriter(outfile, delimiter=',', fieldnames=fieldnames)
     writer.writeheader()
     
@@ -35,6 +38,7 @@ with open("../data/" + gamename + "_sent.csv", 'w') as outfile:
                         'created_at': row['created_at'],
                         'timestamp': row['timestamp'],
                         'geo': row['geo'],
+                        'lang' : row['lang'],
                         'polarity' : sent['data'][jid]['polarity'],
                     })
         else: 
@@ -44,6 +48,7 @@ with open("../data/" + gamename + "_sent.csv", 'w') as outfile:
                         'created_at': row['created_at'],
                         'timestamp': row['timestamp'],
                         'geo': row['geo'],
+                        'lang' : row['lang'],
                         'polarity' : '-1',
                     })
                 
