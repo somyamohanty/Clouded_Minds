@@ -1,8 +1,12 @@
 game=Real Madrid vs Barcelona, Spanish La Liga
 starttime=1441951020
 endtime=2441951140
-keywords=fcbrma,rmafcb,fcbvsrma,rmavsfcb,elclassico,barcelona,real madrid,el classico
+keywords=fcbrma,rmafcb,fcbvsrma,rmavsfcb,elclassico,barcelona,real madrid,el classico,el,classico,elclasico
 db=realbarca
-kotime=2015,11,21,18,15
+kotime=2015,11,21,18,17
 fh_added_time=2
 sh_added_time=6
+tpm=1170.00
+home-team=real madrid:navas,danilo,varane,ramos,marcelo,james,kroos,modric,bale,ronaldo,benzama,isco,carvajal
+away-team=barcelona:bravo,alves,pique,mascherano,alba,busquets,roberto,rakitic,iniesta,suarez,neymar,messi,haddadi
+n_tweets=114289

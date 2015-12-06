@@ -6,3 +6,7 @@ db=mciliv
 kotime=2015,11,21,18,30
 fh_added_time=2
 sh_added_time=4
+tpm=877.00
+n_tweets=83946
+home-team=Manchester City:hart,sagna,demichelis,mangala,kolarov,toure,fernando,navas,bruyne,sterling,aguero,fernandinho,iheanacho,delph
+away-team=Liverpool:mignolet,clyne,skrtel,lovren,moreno,can,lucas,milner,coutinho,lallana,firmino,ibe,benteke,toure

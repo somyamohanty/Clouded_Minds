@@ -6,3 +6,7 @@ db=chesou
 kotime=2015,10,3,17,30
 fh_added_time=2
 sh_added_time=10
+home-team=chelsea:begovic,azpilicueta,terry,cahil,ivanovic,hazard,willian,ramires,oscar,fabregas,falcao,pedro,matic,remy
+away-team=southampton:stekelenburg,bertrand,soares,dijk,fonte,wanyama,tadic,romeu,mane,davis,pelle,rodreguez,yoshida,ward-prowse
+tpm=878.00
+n_tweets=91972

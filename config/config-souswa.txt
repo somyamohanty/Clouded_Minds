@@ -1,4 +1,9 @@
 starttime=13420121200
 endtime=2442027374
-keywords=#SOUSWA,Southampton,Swansea
+keywords=#souswa,southampton,swansea
 db=souswa
+home-team=southampton:stekelenburg,cedric,fonte,dijk,bertrand,davis,wanyama,mane,ward-prowse,tadic,pelle,romeu,rodriguez,juanmi
+away-team=swansea:fabianski,naughton,fernandez,williams,taylor,ki,shelvey,cork,ayew,gomis,sigurdsson,montero,eder,britton
+fh_added_time=3
+sh_added_time=4
+kotime=2015,9,26,15,0

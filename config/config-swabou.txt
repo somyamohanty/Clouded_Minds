@@ -6,3 +6,7 @@ db=swabou
 kotime=2015,11,21,16,00
 fh_added_time=3
 sh_added_time=5
+tpm=55.00
+n_tweets=5368
+home-team=Swansea:fabianski,naughton,bartley,williams,taylor,ki,britton,ayew,shelvey,routledge,eder,montero,sigurdsson,gomis
+away-team=Bournemouth:federici,francis,cook,distin,daniels,ritchie,gosling,surman,stanislas,arter,king,smith,murray,macdonald

@@ -1,4 +1,9 @@
 starttime=13420121200
 endtime=2442027374
-keywords=#LEIARS,LCFC,AFC,Leicester,Arsenal
+keywords=leiars,lcfc,afc,leicester,arsenal
 db=leiars
+away-team=arsenal:cech,bellerin,mertesacker,koscielny,monreal,cazorla,flamini,ramsey,ozil,sanchez,walcott,arteta,chamberlain,giroud
+home-team=leicester city:schmeichel,laet,morgan,huth,schlupp,mahrez,drinkwater,kante,albrighton,vardy,okazaki,king,ulloa,kramaric
+kotime=2015,9,26,15,0
+fh_added_time=2
+sh_added_time=4

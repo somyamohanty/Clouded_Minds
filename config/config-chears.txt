@@ -1,5 +1,12 @@
+game=Chelsea vs Arsenal, English Premier League
 starttime=13420121200
 endtime=2442027374
-keywords=#chears,Arsenal,Chelsea,#CFC,#AFC
+keywords=chears,Arsenal,Chelsea,CFC,AFC
 db=chears
 kotime=2015,9,19,12,45
+fh_added_time=4
+sh_added_time=5
+tpm=1200.00
+home-team=chelsea:begovic,zouma,cahil,ivanovic,azpilicueta,pedro,oscar,matic,fabregas,hazard,costa,ramires,mikel,remy
+away-team=arsenal:cech,monreal,koscielny,bellerin,gabriel,ozil,ramsey,coquelin,cazorla,sanchez,walcott,giroud,chambers,chamberlain
+n_tweets=119029
