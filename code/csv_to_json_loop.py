@@ -2,12 +2,12 @@
 #Note that it would be better to use the MongoDB directly
 import csv, sys, os
 
-gamenames = {"mcinew"} #lang tagged games
+gamenames = {"engfra", "mciliv", "realbarca", "swabou"} #lang tagged games
 for gamename in gamenames:
     
     lang_avail = True #This field indicates if this CSV has the lang column, currently manual entry
     file_num = 1
-    inname = "../data/" + gamename + ".csv"
+    inname = "../data/new-datasets/" + gamename + ".csv"
     outname = "../data/json/" +gamename + "/orig/" + gamename
     reader = csv.DictReader(open(inname), delimiter=',', quotechar='"')
     
